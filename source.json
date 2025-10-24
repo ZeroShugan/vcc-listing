@@ -1,11 +1,15 @@
 {
   "name": "ZeroShugan's VCC Packages",
-  "author": "ZeroShugan",
   "id": "com.zeroshugan.listing",
   "url": "https://zeroshugan.github.io/vcc-listing/index.json",
+  "author": {
+    "name": "ZeroShugan",
+    "url": "https://github.com/ZeroShugan"
+  },
+  "description": "Custom VRChat packages and tools by ZeroShugan",
   "infoLink": {
     "url": "https://github.com/ZeroShugan/vcc-listing",
-    "text": "GitHub Repository"
+    "text": "View on GitHub"
   },
   "githubRepos": [
     "ZeroShugan/shugan-unity-tools"
