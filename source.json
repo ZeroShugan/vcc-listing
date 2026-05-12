@@ -1,17 +1,17 @@
 {
-  "name": "ZeroShugan's VCC Packages",
-  "id": "com.zeroshugan.listing",
-  "url": "https://zeroshugan.github.io/vcc-listing/index.json",
-  "author": {
-    "name": "ZeroShugan",
-    "url": "https://github.com/ZeroShugan"
-  },
-  "description": "Custom VRChat packages and tools by ZeroShugan",
-  "infoLink": {
-    "url": "https://github.com/ZeroShugan/vcc-listing",
-    "text": "View on GitHub"
-  },
-  "githubRepos": [
-    "ZeroShugan/shugan-unity-tools"
-  ]
+    "id":  "com.zeroshugan.listing",
+    "name":  "ZeroShugan\u0027s VCC Packages",
+    "githubRepos":  [
+                        "ZeroShugan/shugan-unity-tools"
+                    ],
+    "description":  "Custom VRChat packages and tools by ZeroShugan",
+    "author":  {
+                   "name":  "ZeroShugan",
+                   "url":  "https://github.com/ZeroShugan"
+               },
+    "url":  "https://tools.shugan.dev/index.json",
+    "infoLink":  {
+                     "text":  "View on GitHub",
+                     "url":  "https://github.com/ZeroShugan/shugan-unity-tools"
+                 }
 }
