@@ -4,7 +4,7 @@
     "githubRepos":  [
                         "ZeroShugan/shugan-unity-tools"
                     ],
-    "description":  "Custom VRChat packages and tools by ZeroShugan",
+    "description":  "A collection of Unity editor tools for VRChat avatar workflows: DisplaceComponent (build-time mesh displacement), Animation Clip Batch Editor (batch path editing and backups), FBX Swapper, PhysBone Constraint Helper, and Add Prefabs.",
     "author":  {
                    "name":  "ZeroShugan",
                    "url":  "https://github.com/ZeroShugan"
