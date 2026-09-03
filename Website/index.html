@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VCC Listing</title>
-  <script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
+  <!-- Pinned deliberately. This was previously the unversioned URL, which resolves to npm's
+       "latest". When @fluentui/web-components published v3 (a rewrite: different elements, no
+       auto-registration), every <fluent-button> / <fluent-data-grid> on this page silently stopped
+       upgrading and rendered as bare unstyled text - with no change to this repo. 2.x is the API
+       this page's markup and the --neutral-* design tokens are written against. Keep it pinned;
+       only bump after checking the buttons still render. -->
+  <script type="module" src="https://unpkg.com/@fluentui/web-components@2.6.1/dist/web-components.min.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>

@@ -33,6 +33,27 @@ Whenever you make a change to the `main` branch, or when you trigger it manually
 
 The contents of the `Website` directory can be customized to change the appearance of the landing page. Most of the information will be automatically filled in with information from [`source.json`](source.json). Customizing the landing page by hand is not required.
 
+### ⚠️ The Fluent web-components version is pinned on purpose
+
+`Website/index.html` loads the Fluent UI web components from unpkg with an **exact version**:
+
+```html
+<script type="module" src="https://unpkg.com/@fluentui/web-components@2.6.1/dist/web-components.min.js"></script>
+```
+
+It used to be the unversioned URL (`https://unpkg.com/@fluentui/web-components`), which resolves to
+npm's `latest` tag. When that tag moved to **v3** — a rewrite with different element names and no
+auto-registration — every `<fluent-button>` and `<fluent-data-grid>` stopped upgrading into a real
+custom element and rendered as **bare unstyled text**: the "Add to VCC" buttons looked like plain
+links, the icons became `□` boxes, and the package grid headers ran together. The `--neutral-*`
+design tokens that `styles.css` relies on were undefined too, since they ship with the library.
+
+Nothing in this repo had changed — an upstream release broke the live site on its own.
+
+**So:** keep the version pinned. If you bump it, open the page afterwards and confirm the buttons
+still render as buttons. Moving to v3 would mean rewriting `index.html` (new element names plus
+explicit `provideFluentDesignSystem().register(...)` calls) and the design tokens in `styles.css`.
+
 ## Technical Stuff
 
 You are welcome to make your own changes to the automation process to make it fit your needs, and you can create Pull Requests if you have some changes you think we should adopt. Here's some more info on the included automation:
