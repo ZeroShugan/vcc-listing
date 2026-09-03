@@ -1,4 +1,9 @@
-import { baseLayerLuminance, StandardLuminance } from 'https://unpkg.com/@fluentui/web-components';
+// Pinned to match the <script> tag in index.html - see the README.
+// This used to be the unversioned URL, which now resolves to @fluentui/web-components v3. v3 does
+// not export StandardLuminance, so this import threw at module-evaluation time and THE WHOLE FILE
+// stopped running: no click handlers were attached, so "Add to VCC" did nothing, and the
+// dark/light switch below never applied. Keep this URL identical to the one in index.html.
+import { baseLayerLuminance, StandardLuminance } from 'https://unpkg.com/@fluentui/web-components@2.6.1/dist/web-components.min.js';
 
 const LISTING_URL = "{{ listingInfo.Url }}";
 
