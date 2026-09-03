@@ -2,6 +2,90 @@
   color-scheme: light dark;
 }
 
+/* ── Dark theme + button styling ─────────────────────────────────────────────
+   The Fluent design system defaults to its LIGHT palette, which rendered the package
+   card as pure white (#fff) on a dark page - harsh, and it clashed with the rest of the
+   layout. Rather than driving the JS design tokens (which needs the same module instance
+   the page's <script> loaded, so it can't be done from a separate import), we override the
+   CSS custom properties the components read. Same result, no JS, and it stays in this file.
+
+   Button look follows the shugan.dev download buttons: rounded, filled cyan, bold dark
+   label, slight lift on hover. Text buttons get generous padding; icon-only buttons stay
+   compact squares so they don't stretch.
+   ------------------------------------------------------------------------- */
+:root,
+body {
+  /* surfaces */
+  --neutral-layer-1: #1c1c1c;
+  --neutral-layer-2: #181818;
+  --neutral-layer-3: #202020;
+  --neutral-layer-card-container: #1c1c1c;
+
+  /* text */
+  --neutral-foreground-rest: #e9e9e9;
+  --neutral-foreground-hover: #ffffff;
+
+  /* neutral controls */
+  --neutral-fill-rest: #2b2b2b;
+  --neutral-fill-hover: #383838;
+  --neutral-fill-active: #262626;
+  --neutral-fill-input-rest: #232323;
+  --neutral-fill-stealth-rest: transparent;
+  --neutral-fill-stealth-hover: #2e2e2e;
+  --neutral-stroke-rest: #3a3a3a;
+  --neutral-stroke-divider-rest: #333333;
+
+  /* accent (Add to VCC) */
+  --accent-fill-rest: #35c2f0;
+  --accent-fill-hover: #5ad0f7;
+  --accent-fill-active: #22a8d6;
+  --foreground-on-accent-rest: #06222e;
+  --foreground-on-accent-hover: #06222e;
+  --accent-foreground-rest: #5ad0f7;
+}
+
+/* All buttons: rounded and bold. ::part(control) reaches inside the component's shadow DOM. */
+fluent-button::part(control) {
+  border-radius: 6px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  transition: background-color 0.12s ease, transform 0.06s ease;
+}
+
+/* Buttons with a text label */
+#vccAddRepoButton::part(control),
+.rowAddToVccButton::part(control),
+#vccUrlFieldCopy::part(control),
+#vccListingInfoUrlFieldCopy::part(control),
+#packageInfoVccUrlFieldCopy::part(control) {
+  min-height: 38px;
+  padding: 0 18px;
+  font-size: 0.95rem;
+}
+
+/* Icon-only buttons: keep them square instead of inheriting the wide padding above */
+#urlBarHelp::part(control),
+#packageInfoListingHelp::part(control),
+.rowPackageInfoButton::part(control),
+.rowMenuButton::part(control) {
+  min-height: 34px;
+  min-width: 34px;
+  padding: 0 8px;
+}
+
+fluent-button:hover::part(control) {
+  transform: translateY(-1px);
+}
+
+fluent-button[appearance="neutral"]::part(control) {
+  border: 1px solid #3d3d3d;
+}
+
+fluent-card {
+  background: #1c1c1c;
+  border: 1px solid #2e2e2e;
+}
+
 * {
   box-sizing: border-box;
 }
